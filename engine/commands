@@ -1,0 +1,17 @@
+g++ -std=gnu++17 \
+main.cpp \
+jsonparser.cpp \
+resumerenderer.cpp \
+pdfconverter.cpp \
+-I/c/Users/mdish/Videos/libraries/libharu/libharu-libharu-4c87178/include \
+-I/c/Users/mdish/Videos/libraries/libharu/libharu-libharu-4c87178/build/include \
+-L/c/Users/mdish/Videos/libraries/libharu/libharu-libharu-4c87178/build/src \
+-lhpdf \
+-o resume_engine
+
+
+website-
+
+python -m venv venv
+
+source venv/bin/activate

@@ -1,0 +1,498 @@
+%PDF-1.3
+%·¾­ª
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [ 4 0 R 9 0 R ]
+/Count 2
+>>
+endobj
+3 0 obj
+<<
+/Producer (Haru Free PDF Library 2.4.5)
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595.276 841.89001 ]
+/Contents 5 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 8 0 R
+/F2 7 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 6 0 R
+>>
+stream
+/F1 11 Tf
+BT
+50 783.48999 Td
+(PRIYA SHARMA) Tj
+ET
+50 781.48999 m
+545.276 781.48999 l
+S
+/F2 11 Tf
+BT
+50 769.48999 Td
+(priya.sharma@example.com | 9876543210) Tj
+ET
+/F2 11 Tf
+BT
+50 755.48999 Td
+(LinkedIn: https:\057\057linkedin.com\057in\057priyasharma) Tj
+ET
+/F2 11 Tf
+BT
+50 741.48999 Td
+(GitHub: https:\057\057github.com\057priyasharma) Tj
+ET
+/F2 11 Tf
+BT
+50 727.48999 Td
+(Portfolio: https:\057\057priyasharma.dev) Tj
+ET
+/F2 11 Tf
+BT
+50 713.48999 Td
+(https:\057\057medium.com\057@priyasharma) Tj
+ET
+/F1 11 Tf
+BT
+50 685.48999 Td
+(SUMMARY) Tj
+ET
+50 683.48999 m
+545.276 683.48999 l
+S
+/F2 11 Tf
+BT
+50 671.48999 Td
+(Full-stack developer with 2+ years of experience building scalable web applications and data-driven) Tj
+ET
+BT
+50 657.48999 Td
+(solutions. Proficient in modern JavaScript frameworks, Python, and cloud technologies. Strong focus) Tj
+ET
+BT
+50 643.48999 Td
+(on writing clean, maintainable code and delivering user-centric products. Passionate about leveraging) Tj
+ET
+BT
+50 629.48999 Td
+(data analytics to drive business decisions and optimize application performance.) Tj
+ET
+/F1 11 Tf
+BT
+50 601.48999 Td
+(EDUCATION) Tj
+ET
+50 599.48999 m
+545.276 599.48999 l
+S
+/F2 11 Tf
+BT
+50 587.48999 Td
+(B.Tech in Computer Science and Engineering) Tj
+ET
+/F2 11 Tf
+BT
+50 573.48999 Td
+(Indian Institute of Technology, Delhi) Tj
+ET
+/F2 11 Tf
+BT
+50 559.48999 Td
+(Batch: 2019 - 2023) Tj
+ET
+/F2 11 Tf
+BT
+50 539.89001 Td
+(Higher Secondary Education \050CBSE\051) Tj
+ET
+/F2 11 Tf
+BT
+50 525.89001 Td
+(Delhi Public School, R.K. Puram) Tj
+ET
+/F2 11 Tf
+BT
+50 511.89001 Td
+(Batch: 2017 - 2019) Tj
+ET
+/F1 11 Tf
+BT
+50 483.89001 Td
+(EXPERIENCE) Tj
+ET
+50 481.89001 m
+545.276 481.89001 l
+S
+/F2 11 Tf
+BT
+50 469.89001 Td
+(Software Development Engineer - Flipkart) Tj
+ET
+/F2 11 Tf
+BT
+62 455.89001 Td
+(- Led development of microservices architecture for inventory management system serving 100K+) Tj
+ET
+BT
+62 441.89001 Td
+(daily transactions. Optimized database queries reducing response time by 45\045. Collaborated with) Tj
+ET
+BT
+62 427.89001 Td
+(cross-functional teams to implement real-time analytics dashboard using React and Node.js.) Tj
+ET
+BT
+62 413.89001 Td
+(Mentored 3 junior developers and conducted code reviews to maintain high code quality standards.) Tj
+ET
+/F2 11 Tf
+BT
+50 394.29 Td
+(Full Stack Intern - Zomato) Tj
+ET
+/F2 11 Tf
+BT
+62 380.29 Td
+(- Developed RESTful APIs for restaurant recommendation engine using Python Flask and) Tj
+ET
+BT
+62 366.29 Td
+(PostgreSQL. Implemented responsive frontend features using React and Redux, improving user) Tj
+ET
+BT
+62 352.29 Td
+(engagement by 30\045. Integrated third-party payment gateway APIs and handled error handling for) Tj
+ET
+BT
+62 338.29 Td
+(edge cases. Participated in Agile sprints and daily standups with engineering team.) Tj
+ET
+/F2 11 Tf
+BT
+50 318.69 Td
+(Data Analysis Intern - NITI Aayog) Tj
+ET
+/F2 11 Tf
+BT
+62 304.69 Td
+(- Analyzed large datasets \0505M+ records\051 on urban development indicators using Python pandas) Tj
+ET
+BT
+62 290.69 Td
+(and NumPy. Created interactive data visualizations using Plotly and Tableau for government) Tj
+ET
+BT
+62 276.69 Td
+(stakeholders. Built automated ETL pipelines to process census data and generate weekly reports.) Tj
+ET
+BT
+62 262.69 Td
+(Presented findings to senior officials, influencing policy recommendations.) Tj
+ET
+/F1 11 Tf
+BT
+50 234.69 Td
+(PROJECTS) Tj
+ET
+50 232.69 m
+545.276 232.69 l
+S
+/F2 11 Tf
+BT
+50 220.69 Td
+(E-Commerce Platform with AI Recommendations) Tj
+ET
+/F2 11 Tf
+BT
+62 206.69 Td
+(- Built full-stack e-commerce application using MERN stack serving 5000+ registered) Tj
+ET
+/F2 11 Tf
+BT
+62 192.69 Td
+(- Implemented machine learning recommendation system using collaborative filtering) Tj
+ET
+/F2 11 Tf
+BT
+62 178.69 Td
+(- Integrated Razorpay payment gateway and automated order tracking with email) Tj
+ET
+/F2 11 Tf
+BT
+62 164.69 Td
+(- Deployed on AWS EC2 with CI\057CD pipeline using GitHub Actions, achieving 99.9\045 uptime) Tj
+ET
+/F2 11 Tf
+BT
+62 150.69 Td
+(- Optimized MongoDB queries and implemented Redis caching, reducing page load time by) Tj
+ET
+/F2 11 Tf
+BT
+50 131.08999 Td
+(Real-Time Chat Application with Video Calling) Tj
+ET
+/F2 11 Tf
+BT
+62 117.08999 Td
+(- Developed scalable chat application using Socket.io and WebRTC supporting 1000+) Tj
+ET
+/F2 11 Tf
+BT
+62 103.08999 Td
+(- Implemented end-to-end encryption for secure messaging using CryptoJS library) Tj
+ET
+/F2 11 Tf
+BT
+62 89.08999 Td
+(- Built group chat functionality with file sharing capabilities up to 10MB per file) Tj
+ET
+/F2 11 Tf
+BT
+62 75.08999 Td
+(- Created responsive UI using React and Material-UI with dark mode support) Tj
+ET
+/F2 11 Tf
+
+endstream
+endobj
+6 0 obj
+4605
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+9 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595 841 ]
+/Contents 10 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 11 0 R
+>>
+stream
+/F1 11 Tf
+BT
+62 791 Td
+(- Containerized application using Docker and deployed on Kubernetes cluster) Tj
+ET
+/F2 11 Tf
+BT
+50 763 Td
+(SKILLS & TOOLS) Tj
+ET
+50 761 m
+545.276 761 l
+S
+/F1 11 Tf
+BT
+62 749 Td
+(- languages: JavaScript \050ES6+\051, Python, Java, C++, SQL, HTML5, CSS3) Tj
+ET
+/F1 11 Tf
+BT
+62 735 Td
+(- frontend: React.js, Redux, Next.js, Vue.js, Angular, TypeScript, Material-UI, Tailwind) Tj
+ET
+/F1 11 Tf
+BT
+62 721 Td
+(- backend: Node.js, Express.js, Django, Flask, FastAPI, Spring Boot) Tj
+ET
+/F1 11 Tf
+BT
+62 707 Td
+(- databases: MongoDB, PostgreSQL, MySQL, Redis, Firebase, DynamoDB) Tj
+ET
+/F1 11 Tf
+BT
+62 693 Td
+(- cloud & devops: AWS \050EC2, S3, Lambda\051, Google Cloud Platform, Docker, Kubernetes,) Tj
+ET
+/F1 11 Tf
+BT
+62 679 Td
+(- VS Code) Tj
+ET
+/F1 11 Tf
+BT
+62 665 Td
+(- PyCharm) Tj
+ET
+/F1 11 Tf
+BT
+62 651 Td
+(- Postman) Tj
+ET
+/F1 11 Tf
+BT
+62 637 Td
+(- Jira) Tj
+ET
+/F1 11 Tf
+BT
+62 623 Td
+(- Figma) Tj
+ET
+/F1 11 Tf
+BT
+62 603.40002 Td
+(- ---- PAGE 2 -----) Tj
+ET
+/F1 11 Tf
+BT
+62 583.80004 Td
+(- Tableau) Tj
+ET
+/F1 11 Tf
+BT
+62 569.80004 Td
+(- Jupyter Notebook) Tj
+ET
+/F1 11 Tf
+BT
+62 555.80004 Td
+(- MongoDB Compass) Tj
+ET
+/F1 11 Tf
+BT
+62 541.80004 Td
+(- pgAdmin) Tj
+ET
+/F1 11 Tf
+BT
+62 527.80004 Td
+(- Slack) Tj
+ET
+/F1 11 Tf
+BT
+62 513.80004 Td
+(- Trello) Tj
+ET
+/F1 11 Tf
+BT
+62 499.80004 Td
+(- Android Studio) Tj
+ET
+/F2 11 Tf
+BT
+50 471.80004 Td
+(CERTIFICATIONS) Tj
+ET
+50 469.80004 m
+545.276 469.80004 l
+S
+/F1 11 Tf
+BT
+50 457.80004 Td
+(AWS Certified Solutions Architect - Associate) Tj
+ET
+/F1 11 Tf
+BT
+62 443.80004 Td
+(- Demonstrated expertise in designing distributed systems on AWS platform. Covered compute,) Tj
+ET
+BT
+62 429.80004 Td
+(storage, database, networking, and security services with hands-on labs and real-world scenarios.) Tj
+ET
+/F1 11 Tf
+BT
+50 410.20004 Td
+(Google Data Analytics Professional Certificate) Tj
+ET
+/F1 11 Tf
+BT
+62 396.20004 Td
+(- Comprehensive training in data cleaning, analysis, and visualization using SQL, R, and Tableau.) Tj
+ET
+BT
+62 382.20004 Td
+(Completed capstone project analyzing e-commerce sales data and presenting actionable insights.) Tj
+ET
+/F1 11 Tf
+BT
+50 362.60003 Td
+(Meta Front-End Developer Professional Certificate) Tj
+ET
+/F1 11 Tf
+BT
+62 348.60003 Td
+(- Advanced training in React, responsive design, and modern web development practices. Built) Tj
+ET
+BT
+62 334.60003 Td
+(portfolio of 5+ responsive web applications using industry-standard tools and frameworks.) Tj
+ET
+
+endstream
+endobj
+11 0 obj
+2429
+endobj
+xref
+0 12
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000129 00000 n
+0000000190 00000 n
+0000000386 00000 n
+0000005045 00000 n
+0000005065 00000 n
+0000005163 00000 n
+0000005266 00000 n
+0000005453 00000 n
+0000007938 00000 n
+trailer
+<<
+/Root 1 0 R
+/Info 3 0 R
+/Size 12
+>>
+startxref
+7959
+%%EOF

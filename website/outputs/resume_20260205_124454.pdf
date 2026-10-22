@@ -1,0 +1,399 @@
+%PDF-1.3
+%·¾­ª
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [ 4 0 R 9 0 R ]
+/Count 2
+>>
+endobj
+3 0 obj
+<<
+/Producer (Haru Free PDF Library 2.4.5)
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595.276 841.89001 ]
+/Contents 5 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 8 0 R
+/F2 7 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 6 0 R
+>>
+stream
+/F1 11 Tf
+BT
+50 783.48999 Td
+(PRIYA SHARMA) Tj
+ET
+50 781.48999 m
+545.276 781.48999 l
+S
+/F2 11 Tf
+BT
+50 769.48999 Td
+(priya.sharma@example.com | 9876543210) Tj
+ET
+/F2 11 Tf
+BT
+50 755.48999 Td
+(LinkedIn: https:\057\057linkedin.com\057in\057priyasharma) Tj
+ET
+/F2 11 Tf
+BT
+50 741.48999 Td
+(GitHub: https:\057\057github.com\057priyasharma) Tj
+ET
+/F2 11 Tf
+BT
+50 727.48999 Td
+(Portfolio: https:\057\057priyasharma.dev) Tj
+ET
+/F2 11 Tf
+BT
+50 713.48999 Td
+(https:\057\057medium.com\057@priyasharma) Tj
+ET
+/F1 11 Tf
+BT
+50 685.48999 Td
+(SUMMARY) Tj
+ET
+50 683.48999 m
+545.276 683.48999 l
+S
+/F2 11 Tf
+BT
+50 671.48999 Td
+(Full-stack developer with 2+ years of experience building scalable web applications and data-driven) Tj
+ET
+BT
+50 657.48999 Td
+(solutions. Proficient in modern JavaScript frameworks, Python, and cloud technologies. Strong focus) Tj
+ET
+BT
+50 643.48999 Td
+(on writing clean, maintainable code and delivering user-centric products. Passionate about leveraging) Tj
+ET
+BT
+50 629.48999 Td
+(data analytics to drive business decisions and optimize application performance.) Tj
+ET
+/F1 11 Tf
+BT
+50 601.48999 Td
+(EDUCATION) Tj
+ET
+50 599.48999 m
+545.276 599.48999 l
+S
+/F2 11 Tf
+BT
+50 587.48999 Td
+(Higher Secondary Education \050CBSE\051) Tj
+ET
+/F2 11 Tf
+BT
+50 573.48999 Td
+(Delhi Public School, R.K. Puram) Tj
+ET
+/F2 11 Tf
+BT
+50 559.48999 Td
+(Batch: 2017 - 2019) Tj
+ET
+/F1 11 Tf
+BT
+50 531.48999 Td
+(EXPERIENCE) Tj
+ET
+50 529.48999 m
+545.276 529.48999 l
+S
+/F2 11 Tf
+BT
+50 517.48999 Td
+(Data Analysis Intern - NITI Aayog) Tj
+ET
+/F2 11 Tf
+BT
+62 503.48999 Td
+(- Led development of microservices architecture for inventory management system serving 100K+) Tj
+ET
+BT
+62 489.48999 Td
+(daily transactions. Optimized database queries reducing response time by 45\045. Collaborated with) Tj
+ET
+BT
+62 475.48999 Td
+(cross-functional teams to implement real-time analytics dashboard using React and Node.js.) Tj
+ET
+BT
+62 461.48999 Td
+(Mentored 3 junior developers and conducted code reviews to maintain high code quality standards.) Tj
+ET
+/F1 11 Tf
+BT
+50 433.48999 Td
+(PROJECTS) Tj
+ET
+50 431.48999 m
+545.276 431.48999 l
+S
+/F2 11 Tf
+BT
+50 419.48999 Td
+(Real-Time Chat Application with Video Calling) Tj
+ET
+/F2 11 Tf
+BT
+62 405.48999 Td
+(- Collected and cleaned COVID-19 data from 150+ countries using Python web scraping) Tj
+ET
+BT
+62 391.48999 Td
+(\050BeautifulSoup\051) Tj
+ET
+/F2 11 Tf
+BT
+62 377.48999 Td
+(- Built LSTM neural network model to predict case trends with 85\045 accuracy over 14-day period) Tj
+ET
+/F2 11 Tf
+BT
+62 363.48999 Td
+(- Created interactive dashboard using Dash and Plotly for real-time data visualization) Tj
+ET
+/F2 11 Tf
+BT
+62 349.48999 Td
+(- Automated daily data updates using cron jobs and stored in PostgreSQL database) Tj
+ET
+/F2 11 Tf
+BT
+62 335.48999 Td
+(- Published findings as research paper, garnering 500+ citations in academic) Tj
+ET
+/F2 11 Tf
+BT
+62 321.48999 Td
+(- community") Tj
+ET
+/F1 11 Tf
+BT
+50 293.48999 Td
+(SKILLS & TOOLS) Tj
+ET
+50 291.48999 m
+545.276 291.48999 l
+S
+/F2 11 Tf
+BT
+62 279.48999 Td
+(- languages: JavaScript \050ES6+\051, Python, Java, C++, SQL, HTML5, CSS3",) Tj
+ET
+/F2 11 Tf
+BT
+62 265.48999 Td
+(- "frontend: React.js, Redux, Next.js, Vue.js, Angular, TypeScript, Material-UI, Tailwind CSS",) Tj
+ET
+/F2 11 Tf
+BT
+62 251.48999 Td
+(- "backend: Node.js, Express.js, Django, Flask, FastAPI, Spring Boot",) Tj
+ET
+/F2 11 Tf
+BT
+62 237.48999 Td
+(- "databases: MongoDB, PostgreSQL, MySQL, Redis, Firebase, DynamoDB",) Tj
+ET
+/F2 11 Tf
+BT
+62 223.48999 Td
+(- "cloud & devops: AWS \050EC2, S3, Lambda\051, Google Cloud Platform, Docker, Kubernetes,) Tj
+ET
+BT
+62 209.48999 Td
+(Jenkins",) Tj
+ET
+/F2 11 Tf
+BT
+62 195.48999 Td
+(- "data science: pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Matplotlib, Seaborn",) Tj
+ET
+/F2 11 Tf
+BT
+62 181.48999 Td
+(- "tools & methods: Git, GitHub Actions, Agile\057Scrum, RESTful APIs, GraphQL, Microservices") Tj
+ET
+/F2 11 Tf
+BT
+62 167.48999 Td
+(- VS Code) Tj
+ET
+/F2 11 Tf
+BT
+62 153.48999 Td
+(- PyCharm) Tj
+ET
+/F2 11 Tf
+BT
+62 139.48999 Td
+(- Postman) Tj
+ET
+/F2 11 Tf
+BT
+62 125.48999 Td
+(- Jira) Tj
+ET
+/F2 11 Tf
+BT
+62 111.48999 Td
+(- Figma) Tj
+ET
+/F2 11 Tf
+BT
+62 97.48999 Td
+(- Tableau) Tj
+ET
+/F2 11 Tf
+BT
+62 83.48999 Td
+(- Jupyter Notebook) Tj
+ET
+/F2 11 Tf
+BT
+62 69.48999 Td
+(- MongoDB Compass) Tj
+ET
+/F2 11 Tf
+
+endstream
+endobj
+6 0 obj
+4266
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+9 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595 841 ]
+/Contents 10 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 11 0 R
+>>
+stream
+/F1 11 Tf
+BT
+62 791 Td
+(- pgAdmin) Tj
+ET
+/F1 11 Tf
+BT
+62 777 Td
+(- Slack) Tj
+ET
+/F1 11 Tf
+BT
+62 763 Td
+(- Trello) Tj
+ET
+/F1 11 Tf
+BT
+62 749 Td
+(- Android Studio) Tj
+ET
+/F2 11 Tf
+BT
+50 721 Td
+(CERTIFICATIONS) Tj
+ET
+50 719 m
+545.276 719 l
+S
+/F1 11 Tf
+BT
+50 707 Td
+(Meta Front-End Developer Professional Certificate) Tj
+ET
+/F1 11 Tf
+BT
+62 693 Td
+(- Demonstrated expertise in designing distributed systems on AWS platform. Covered compute,) Tj
+ET
+BT
+62 679 Td
+(storage, database, networking, and security services with hands-on labs and real-world scenarios.) Tj
+ET
+
+endstream
+endobj
+11 0 obj
+562
+endobj
+xref
+0 12
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000129 00000 n
+0000000190 00000 n
+0000000386 00000 n
+0000004706 00000 n
+0000004726 00000 n
+0000004824 00000 n
+0000004927 00000 n
+0000005114 00000 n
+0000005732 00000 n
+trailer
+<<
+/Root 1 0 R
+/Info 3 0 R
+/Size 12
+>>
+startxref
+5752
+%%EOF

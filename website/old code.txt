@@ -1,0 +1,717 @@
+from flask import Flask, render_template_string, request, jsonify, send_file
+import json
+import subprocess
+import os
+from datetime import datetime
+
+app = Flask(__name__)
+
+# Configuration
+UPLOAD_FOLDER = 'uploads'
+OUTPUT_FOLDER = 'outputs'
+CPP_ENGINE_PATH = os.path.join('..', 'engine', 'resume_engine.exe')  # Change to 'resume_engine' for Linux/Mac
+
+# Create necessary folders
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+
+# HTML Template (embedded in Python file)
+HTML_TEMPLATE = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.3em;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .required {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background: #fafafa;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .dynamic-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-left: 3px solid #1a1a1a;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-add {
+            background: #1a1a1a;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .btn-add:hover {
+            background: #333;
+        }
+
+        .btn-remove {
+            background: #666;
+            color: #fff;
+            margin-top: 10px;
+            font-size: 12px;
+            padding: 8px 15px;
+        }
+
+        .btn-remove:hover {
+            background: #888;
+        }
+
+        .btn-submit {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 16px;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .btn-submit:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1a1a1a;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .success {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .success-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .success-box h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .btn-download {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            border-radius: 4px;
+        }
+
+        .btn-download:hover {
+            background: #333;
+        }
+
+        small {
+            display: block;
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ATS Resume Builder</h1>
+            <p class="tagline">Build your professional, ATS-friendly resume</p>
+        </header>
+
+        <form id="resumeForm">
+            <!-- Personal Information -->
+            <div class="section">
+                <h2>Personal Information</h2>
+                
+                <div class="form-group">
+                    <label>Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Professional Title (Optional)</label>
+                    <input type="text" id="title">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone <span class="required">*</span></label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="section">
+                <h2>Links (Optional)</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Portfolio</label>
+                        <input type="url" id="portfolio_link">
+                    </div>
+
+                    <div class="form-group">
+                        <label>LinkedIn</label>
+                        <input type="url" id="linkedin_link">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>GitHub</label>
+                        <input type="url" id="github_link">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Link</label>
+                        <input type="url" id="additional_link">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="section">
+                <h2>Professional Summary <span class="required">*</span></h2>
+                <div class="form-group">
+                    <textarea id="summary" rows="4" required></textarea>
+                    <small>Brief professional summary highlighting your key skills</small>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2>Education <span class="required">*</span></h2>
+                <div id="educationContainer">
+                    <div class="dynamic-item education-item">
+                        <div class="form-group">
+                            <label>Degree</label>
+                            <input type="text" class="education-degree" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Institution</label>
+                            <input type="text" class="education-institution" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Batch</label>
+                            <input type="text" class="education-batch" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addEducation()">+ Add Education</button>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <h2>Experience <span class="required">*</span></h2>
+                <div id="experienceContainer">
+                    <div class="dynamic-item experience-item">
+                        <div class="form-group">
+                            <label>Company / Role</label>
+                            <input type="text" class="experience-company" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="experience-description" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addExperience()">+ Add Experience</button>
+            </div>
+
+            <!-- Projects -->
+            <div class="section">
+                <h2>Projects <span class="required">*</span></h2>
+                <div id="projectsContainer">
+                    <div class="dynamic-item project-item">
+                        <div class="form-group">
+                            <label>Project Title</label>
+                            <input type="text" class="project-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bullet Points (one per line)</label>
+                            <textarea class="project-bullets" rows="4" required></textarea>
+                            <small>Each line becomes a bullet point</small>
+                        </div>
+                        <button type="button" class="btn-remove" onclick="removeProject(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addProject()">+ Add Project</button>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2>Skills <span class="required">*</span></h2>
+                <div class="form-group">
+                    <textarea id="skills" rows="4" required></textarea>
+                    <small>One skill per line</small>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="section">
+                <h2>Tools <span class="required">*</span></h2>
+                <div class="form-group">
+                    <textarea id="tools" rows="4" required></textarea>
+                    <small>One tool per line</small>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <h2>Certifications <span class="required">*</span></h2>
+                <div id="certificationsContainer">
+                    <div class="dynamic-item certification-item">
+                        <div class="form-group">
+                            <label>Certification Name</label>
+                            <input type="text" class="certification-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="certification-description" rows="2" required></textarea>
+                        </div>
+                        <button type="button" class="btn-remove" onclick="removeCertification(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addCertification()">+ Add Certification</button>
+            </div>
+
+            <button type="submit" class="btn-submit">Generate Resume</button>
+        </form>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading" id="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Generating your resume...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success" id="success">
+        <div class="success-box">
+            <h2>✓ Resume Generated!</h2>
+            <p>Your ATS-friendly resume is ready</p>
+            <a href="#" id="downloadLink" class="btn-download">Download Resume</a>
+            <button onclick="closeSuccess()" class="btn-download">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic form functions
+        function addEducation() {
+            const container = document.getElementById('educationContainer');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item education-item';
+            div.innerHTML = `
+                <div class="form-group">
+                    <label>Degree</label>
+                    <input type="text" class="education-degree" required>
+                </div>
+                <div class="form-group">
+                    <label>Institution</label>
+                    <input type="text" class="education-institution" required>
+                </div>
+                <div class="form-group">
+                    <label>Batch</label>
+                    <input type="text" class="education-batch" required>
+                </div>
+                <button type="button" class="btn-remove" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function addExperience() {
+            const container = document.getElementById('experienceContainer');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item experience-item';
+            div.innerHTML = `
+                <div class="form-group">
+                    <label>Company / Role</label>
+                    <input type="text" class="experience-company" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="experience-description" rows="3" required></textarea>
+                </div>
+                <button type="button" class="btn-remove" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function addProject() {
+            const container = document.getElementById('projectsContainer');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item project-item';
+            div.innerHTML = `
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" class="project-title" required>
+                </div>
+                <div class="form-group">
+                    <label>Bullet Points (one per line)</label>
+                    <textarea class="project-bullets" rows="4" required></textarea>
+                    <small>Each line becomes a bullet point</small>
+                </div>
+                <button type="button" class="btn-remove" onclick="removeProject(this)">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeProject(btn) {
+            if (document.querySelectorAll('.project-item').length > 1) {
+                btn.parentElement.remove();
+            } else {
+                alert('You must have at least one project');
+            }
+        }
+
+        function addCertification() {
+            const container = document.getElementById('certificationsContainer');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item certification-item';
+            div.innerHTML = `
+                <div class="form-group">
+                    <label>Certification Name</label>
+                    <input type="text" class="certification-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="certification-description" rows="2" required></textarea>
+                </div>
+                <button type="button" class="btn-remove" onclick="removeCertification(this)">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeCertification(btn) {
+            if (document.querySelectorAll('.certification-item').length > 1) {
+                btn.parentElement.remove();
+            } else {
+                alert('You must have at least one certification');
+            }
+        }
+
+        // Collect form data
+        function collectFormData() {
+            const data = {
+                name: document.getElementById('name').value.trim(),
+                title: document.getElementById('title').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                portfolio_link: document.getElementById('portfolio_link').value.trim(),
+                linkedin_link: document.getElementById('linkedin_link').value.trim(),
+                github_link: document.getElementById('github_link').value.trim(),
+                additional_link: document.getElementById('additional_link').value.trim(),
+                summary: document.getElementById('summary').value.trim(),
+                skills: document.getElementById('skills').value.trim().split('\\n').filter(s => s.trim()),
+                tools: document.getElementById('tools').value.trim().split('\\n').filter(t => t.trim()),
+                education: [],
+                experience: [],
+                projects: [],
+                certifications: []
+            };
+
+            document.querySelectorAll('.education-item').forEach(item => {
+                data.education.push({
+                    degree: item.querySelector('.education-degree').value.trim(),
+                    institution: item.querySelector('.education-institution').value.trim(),
+                    batch: item.querySelector('.education-batch').value.trim()
+                });
+            });
+
+            document.querySelectorAll('.experience-item').forEach(item => {
+                data.experience.push({
+                    company: item.querySelector('.experience-company').value.trim(),
+                    description: item.querySelector('.experience-description').value.trim()
+                });
+            });
+
+            document.querySelectorAll('.project-item').forEach(item => {
+                const bullets = item.querySelector('.project-bullets').value.trim()
+                    .split('\\n').filter(b => b.trim());
+                data.projects.push({
+                    title: item.querySelector('.project-title').value.trim(),
+                    bullets: bullets
+                });
+            });
+
+            document.querySelectorAll('.certification-item').forEach(item => {
+                data.certifications.push({
+                    name: item.querySelector('.certification-name').value.trim(),
+                    description: item.querySelector('.certification-description').value.trim()
+                });
+            });
+
+            return data;
+        }
+
+        // Form submission
+        document.getElementById('resumeForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = collectFormData();
+            document.getElementById('loading').style.display = 'flex';
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                document.getElementById('loading').style.display = 'none';
+
+                if (result.success) {
+                    document.getElementById('downloadLink').href = '/download/' + result.filename;
+                    document.getElementById('success').style.display = 'flex';
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                alert('Failed to generate resume: ' + error.message);
+            }
+        });
+
+        function closeSuccess() {
+            document.getElementById('success').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+'''
+
+@app.route('/')
+def index():
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/generate', methods=['POST'])
+def generate_resume():
+    try:
+        resume_data = request.json
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        json_filename = f'resume_{timestamp}.json'
+        pdf_filename = f'resume_{timestamp}.pdf'
+        
+        json_path = os.path.join(UPLOAD_FOLDER, json_filename)
+        pdf_path = os.path.join(OUTPUT_FOLDER, pdf_filename)
+        
+        with open(json_path, 'w') as f:
+            json.dump(resume_data, f, indent=2)
+        
+        result = subprocess.run(
+            [CPP_ENGINE_PATH, json_path, pdf_path],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode != 0:
+            return jsonify({'success': False, 'error': f'Engine error: {result.stderr}'}), 500
+        
+        if not os.path.exists(pdf_path):
+            return jsonify({'success': False, 'error': 'PDF was not generated'}), 500
+        
+        return jsonify({'success': True, 'filename': pdf_filename})
+    
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/preview/<filename>')
+def preview_file(filename):
+    """Preview PDF in browser"""
+    try:
+        file_path = os.path.join(OUTPUT_FOLDER, filename)
+        if not os.path.exists(file_path):
+            return jsonify({'error': 'File not found'}), 404
+        return send_file(file_path, mimetype='application/pdf')
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/download/<filename>')
+def download_file(filename):
+    """Download generated PDF"""
+    try:
+        file_path = os.path.join(OUTPUT_FOLDER, filename)
+        if not os.path.exists(file_path):
+            return jsonify({'error': 'File not found'}), 404
+        return send_file(file_path, as_attachment=True, download_name=f'ATS_Resume_{filename}')
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+

@@ -1,0 +1,304 @@
+%PDF-1.3
+%·¾­ª
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [ 4 0 R ]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Producer (Haru Free PDF Library 2.4.5)
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/MediaBox [ 0 0 595.276 841.89001 ]
+/Contents 5 0 R
+/Resources <<
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+/Font <<
+/F1 8 0 R
+/F2 7 0 R
+>>
+>>
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 6 0 R
+>>
+stream
+/F1 11 Tf
+BT
+50 783.48999 Td
+(S MOHAMED ISHAUQ) Tj
+ET
+50 781.48999 m
+545.276 781.48999 l
+S
+/F2 11 Tf
+BT
+50 769.48999 Td
+(ishauq@example.com | 9876543210) Tj
+ET
+/F2 11 Tf
+BT
+50 755.48999 Td
+(LinkedIn: https:\057\057linkedin.com\057in\057ishauq) Tj
+ET
+/F2 11 Tf
+BT
+50 741.48999 Td
+(GitHub: https:\057\057github.com\057ishauq) Tj
+ET
+/F2 11 Tf
+BT
+50 727.48999 Td
+(Portfolio: https:\057\057portfolio.example.com) Tj
+ET
+/F1 11 Tf
+BT
+50 699.48999 Td
+(SUMMARY) Tj
+ET
+50 697.48999 m
+545.276 697.48999 l
+S
+/F2 11 Tf
+BT
+50 685.48999 Td
+(C\057C++ systems developer with hands-on experience in building ATS-friendly tooling, multithreaded) Tj
+ET
+BT
+50 671.48999 Td
+(file processors, and embedded-oriented software. Strong focus on performance, clean architecture,) Tj
+ET
+BT
+50 657.48999 Td
+(and low-level problem solving.) Tj
+ET
+/F1 11 Tf
+BT
+50 629.48999 Td
+(EDUCATION) Tj
+ET
+50 627.48999 m
+545.276 627.48999 l
+S
+/F2 11 Tf
+BT
+50 615.48999 Td
+(B.E Electronics and Communication Engineering) Tj
+ET
+/F2 11 Tf
+BT
+50 601.48999 Td
+(XYZ Engineering College) Tj
+ET
+/F2 11 Tf
+BT
+50 587.48999 Td
+(Batch: 2021 - 2025) Tj
+ET
+/F1 11 Tf
+BT
+50 559.48999 Td
+(EXPERIENCE) Tj
+ET
+50 557.48999 m
+545.276 557.48999 l
+S
+/F2 11 Tf
+BT
+50 545.48999 Td
+(Embedded Systems Intern \342\200\223 Revoh Innovations) Tj
+ET
+/F2 11 Tf
+BT
+62 531.48999 Td
+(- Developed C\057C++ modules for data processing and validation, implemented CLI-based tools,) Tj
+ET
+BT
+62 517.48999 Td
+(optimized file parsing logic, and collaborated with engineers to debug and test embedded-oriented) Tj
+ET
+BT
+62 503.48999 Td
+(software components.) Tj
+ET
+/F1 11 Tf
+BT
+50 475.48999 Td
+(PROJECTS) Tj
+ET
+50 473.48999 m
+545.276 473.48999 l
+S
+/F2 11 Tf
+BT
+50 461.48999 Td
+(ATS Friendly Resume Engine) Tj
+ET
+/F2 11 Tf
+BT
+62 447.48999 Td
+(- Designed universal JSON resume schema for multiple roles) Tj
+ET
+/F2 11 Tf
+BT
+62 433.48999 Td
+(- Implemented strict validation and parsing in modern C++) Tj
+ET
+/F2 11 Tf
+BT
+62 419.48999 Td
+(- Built CLI tool to render ATS-optimized text and PDF resumes) Tj
+ET
+/F2 11 Tf
+BT
+62 405.48999 Td
+(- Handled optional sections dynamically without layout breaks) Tj
+ET
+/F2 11 Tf
+BT
+50 385.88998 Td
+(Multithreaded File Processor) Tj
+ET
+/F2 11 Tf
+BT
+62 371.88998 Td
+(- Implemented parallel file parsing using C++ threads) Tj
+ET
+/F2 11 Tf
+BT
+62 357.88998 Td
+(- Reduced processing time by approximately 3x) Tj
+ET
+/F2 11 Tf
+BT
+62 343.88998 Td
+(- Ensured thread safety and predictable output ordering) Tj
+ET
+/F1 11 Tf
+BT
+50 315.88998 Td
+(SKILLS & TOOLS) Tj
+ET
+50 313.88998 m
+545.276 313.88998 l
+S
+/F2 11 Tf
+BT
+62 301.88998 Td
+(- languages: C++, C, python) Tj
+ET
+/F2 11 Tf
+BT
+62 287.88998 Td
+(- embedded system: stm32, esp32, arduino) Tj
+ET
+/F2 11 Tf
+BT
+62 273.88998 Td
+(- pheripherals: rtos, uart, i2c) Tj
+ET
+/F2 11 Tf
+BT
+62 259.88998 Td
+(- GCC) Tj
+ET
+/F2 11 Tf
+BT
+62 245.88998 Td
+(- VS Code) Tj
+ET
+/F2 11 Tf
+BT
+62 231.88998 Td
+(- Git) Tj
+ET
+/F2 11 Tf
+BT
+62 217.88998 Td
+(- Linux) Tj
+ET
+/F2 11 Tf
+BT
+62 203.88998 Td
+(- CLI Tools) Tj
+ET
+/F2 11 Tf
+BT
+62 189.88998 Td
+(- Debugging \050GDB\051) Tj
+ET
+/F1 11 Tf
+BT
+50 161.88998 Td
+(CERTIFICATIONS) Tj
+ET
+50 159.88998 m
+545.276 159.88998 l
+S
+/F2 11 Tf
+BT
+50 147.88998 Td
+(Embedded Systems using Raspberry Pi) Tj
+ET
+/F2 11 Tf
+BT
+62 133.88998 Td
+(- Hands-on training focused on embedded programming fundamentals and hardware interaction.) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+3329
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /StandardEncoding
+>>
+endobj
+xref
+0 9
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000123 00000 n
+0000000184 00000 n
+0000000380 00000 n
+0000003763 00000 n
+0000003783 00000 n
+0000003881 00000 n
+trailer
+<<
+/Root 1 0 R
+/Info 3 0 R
+/Size 9
+>>
+startxref
+3984
+%%EOF

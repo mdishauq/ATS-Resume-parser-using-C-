@@ -1,0 +1,70 @@
+{
+  "name": "S Mohamed Ishauq",
+  "title": "C/C++ Systems & Embedded Developer",
+  "email": "ishauq@example.com",
+  "phone": "9876543210",
+
+  "portfolio_link": "https://portfolio.example.com",
+  "linkedin_link": "https://linkedin.com/in/ishauq",
+  "github_link": "https://github.com/ishauq",
+  "additional_link": "",
+
+  "summary": "C/C++ systems developer with hands-on experience in building ATS-friendly tooling, multithreaded file processors, and embedded-oriented software. Strong focus on performance, clean architecture, and low-level problem solving.",
+
+  "education": [
+    {
+      "degree": "B.E Electronics and Communication Engineering",
+      "institution": "XYZ Engineering College",
+      "batch": "2021 - 2025"
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Embedded Systems Intern – Revoh Innovations",
+      "description": "Developed C/C++ modules for data processing and validation, implemented CLI-based tools, optimized file parsing logic, and collaborated with engineers to debug and test embedded-oriented software components."
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "ATS Friendly Resume Engine",
+      "bullets": [
+        "Designed universal JSON resume schema for multiple roles",
+        "Implemented strict validation and parsing in modern C++",
+        "Built CLI tool to render ATS-optimized text and PDF resumes",
+        "Handled optional sections dynamically without layout breaks"
+      ]
+    },
+    {
+      "title": "Multithreaded File Processor",
+      "bullets": [
+        "Implemented parallel file parsing using C++ threads",
+        "Reduced processing time by approximately 3x",
+        "Ensured thread safety and predictable output ordering"
+      ]
+    }
+  ],
+
+  "skills": [
+    "languages: C++, C, python",
+    "embedded system: stm32, esp32, arduino",
+    "pheripherals: rtos, uart, i2c"
+  ],
+
+  "tools": [
+    "GCC",
+    "VS Code",
+    "Git",
+    "Linux",
+    "CLI Tools",
+    "Debugging (GDB)"
+  ],
+
+  "certifications": [
+    {
+      "name": "Embedded Systems using Raspberry Pi",
+      "description": "Hands-on training focused on embedded programming fundamentals and hardware interaction."
+    }
+  ]
+}

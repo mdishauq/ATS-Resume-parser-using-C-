@@ -1,0 +1,44 @@
+S MOHAMED ISHAUQ
+ishauq@example.com | 9876543210
+LinkedIn: https://linkedin.com/in/ishauq
+GitHub: https://github.com/ishauq
+Portfolio: https://portfolio.example.com
+
+SUMMARY
+C/C++ systems developer with hands-on experience in building ATS-friendly tooling, multithreaded file processors, and embedded-oriented software. Strong focus on performance, clean architecture, and low-level problem solving.
+
+EDUCATION
+B.E Electronics and Communication Engineering
+XYZ Engineering College
+Batch: 2021 - 2025
+
+EXPERIENCE
+Embedded Systems Intern – Revoh Innovations
+- Developed C/C++ modules for data processing and validation, implemented CLI-based tools, optimized file parsing logic, and collaborated with engineers to debug and test embedded-oriented software components.
+
+PROJECTS
+ATS Friendly Resume Engine
+- Designed universal JSON resume schema for multiple roles
+- Implemented strict validation and parsing in modern C++
+- Built CLI tool to render ATS-optimized text and PDF resumes
+- Handled optional sections dynamically without layout breaks
+
+Multithreaded File Processor
+- Implemented parallel file parsing using C++ threads
+- Reduced processing time by approximately 3x
+- Ensured thread safety and predictable output ordering
+
+SKILLS & TOOLS
+- languages: C++, C, python
+- embedded system: stm32, esp32, arduino
+- pheripherals: rtos, uart, i2c
+- GCC
+- VS Code
+- Git
+- Linux
+- CLI Tools
+- Debugging (GDB)
+
+CERTIFICATIONS
+Embedded Systems using Raspberry Pi
+- Hands-on training focused on embedded programming fundamentals and hardware interaction.
